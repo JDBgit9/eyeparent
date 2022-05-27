@@ -1,1 +1,9 @@
 GET http://localhost:3000/parents
+
+###
+
+GET http://localhost:3000/parents/10
+
+###
+
+
