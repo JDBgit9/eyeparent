@@ -93,3 +93,4 @@ const parentsSchema = new mongoose.Schema({
 
 
 })
+module.exports = mongoose.model('parent',  parentsSchema)
