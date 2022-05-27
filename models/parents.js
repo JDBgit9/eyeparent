@@ -17,6 +17,43 @@ const parentsSchema = new mongoose.Schema({
     nameOfCounty: {
 
     },
-    
+    classroomOne: {
+
+    },
+    classroomTwo: {
+
+    },
+    classroomThree: {
+
+    },
+    classroomFour: {
+
+    },
+    classroomFive: {
+
+    },
+    classroomSix: {
+
+    },
+    classroomSeven: {
+
+    },
+    LunchRoom: {
+
+    },
+
+    gymRoom: {
+
+    },
+    adminOffice: {
+
+    },
+    theatreRoom:  {
+
+    },
+    playGround: {
+
+    }
+
 
 })
