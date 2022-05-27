@@ -14,8 +14,8 @@ app.use(express.json())
 
 //route setup
 const parentsRouter = require('./routes/parents')
-app.use('/parents')
-localhost:3000/parents
+app.use('/parents', parentsRouter)
+'localhost:3000/parents'
 
 
 app.listen(3000, () => console.log('Server Started'))
