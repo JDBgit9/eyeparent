@@ -1,5 +1,6 @@
 const { Timestamp } = require('mongodb')
 const mongoose = require('mongoose')
+const Parent = require('../models/parent')
 
 
 const parentsSchema = new mongoose.Schema({
