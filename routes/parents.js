@@ -24,7 +24,12 @@ router.post('/', async (req, res) => {
       name: req.body.name,
       nameOfChild: req.body.nameOfChild 
     })
-    
+    try{
+      const newParent = await parent.save() 
+       res.status(201).json(newParent)
+    } catch (err){
+       res.status(400).json({message: err.message})
+    }
 })
 
 //Updating One
