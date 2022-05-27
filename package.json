@@ -1,0 +1,26 @@
+{
+  "name": "eyeparent",
+  "version": "1.0.0",
+  "description": "An app that keeps an eye out",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "JDBgit9"
+  },
+  "author": "James Justis",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.4"
+  },
+  "devDependencies": {
+    "dot": "^1.1.3",
+    "env": "0.0.2",
+    "nodemon": "^2.0.16"
+  }
+}
