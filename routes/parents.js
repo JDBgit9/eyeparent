@@ -7,6 +7,7 @@ const Parent = require('../models/parents')
 router.get('/', async (req, res) => {
 try {
      const parents = await Parent.find()
+     res.json(parents)
 } catch (err) {
   res.status(500).json({message: err.message })
 }
@@ -18,7 +19,11 @@ try {
 }) 
 
 //Creating One
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    const parent = newParent({
+      name: req.body.name,
+      nameOfChild: req.body.nameOfChild 
+    })
     
 })
 
