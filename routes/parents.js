@@ -1,13 +1,19 @@
 const express = require('express')
+const parents = require('../models/parents')
 const router = express.Router()
+const Parent = require('../models/parents')
 
 //Getting all
-router.get('/', (req, res) => {
-  res.send('Hello World')
+router.get('/', async (req, res) => {
+try {
+     const parents = await Parent.find()
+} catch (err) {
+  res.status(500).json({message: err.message })
+}
 })
 
 //Getting one 
- router.get('/:id', (req, res) => {
+ router.get('/:id', async (req, res) => {
   res.send(req.params.id)
 }) 
 
