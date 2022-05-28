@@ -14,12 +14,12 @@ try {
 })
 
 //Getting one 
- router.get('/:id', async (req, res) => {
-  res.send(req.params.id)
+ router.get('/:id', getParent, async (req, res) => {
+  res.send(res.parent.name)
 }) 
 
 //Creating One
-router.post('/', async (req, res) => {
+router.post('/', getParent, async (req, res) => {
     const parent = new Parent({
       name: req.body.name,
       childName: req.body.childName 
@@ -33,16 +33,28 @@ router.post('/', async (req, res) => {
 })
 
 //Updating One
-router.patch('/:id', (req, res) => {
+router.patch('/:id', getParent, async (req, res) => {
     
 })
 
 
 //Deleting one
-router.delete('/:id', (req, res) => {
-    
+router.delete('/:id', getParent, async (req, res) => {
+ 
 })
 
-
+async function getParent(req, req, next) {
+  let Parent
+  try {
+     parent = await Parent.findById(req.params.id)
+     if (parent == null) {
+       return res.status(404).json({message: 'Cannot find Parent'})
+     }
+  } catch (err) {
+    return res.status(500).json({message: err.message})
+  }
+  res.parent = parent
+  next()
+}
 
 module.exports = router
