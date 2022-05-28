@@ -7,7 +7,7 @@ const Parent = require('../models/parents')
 router.get('/', async (req, res) => {
 try {
      const parents = await Parent.find()
-     res.json(parents)
+     res.json(res.parent)
 } catch (err) {
   res.status(500).json({ message: err.message })
 }
