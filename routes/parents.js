@@ -15,7 +15,7 @@ try {
 
 //Getting one 
  router.get('/:id', getParent, async (req, res) => {
-  res.send(res.parent.name)
+  res.json(res.parent)
 }) 
 
 //Creating One
@@ -43,7 +43,7 @@ router.delete('/:id', getParent, async (req, res) => {
  
 })
 
-async function getParent(req, req, next) {
+async function getParent(req, res, next) {
   let Parent
   try {
      parent = await Parent.findById(req.params.id)
@@ -51,7 +51,7 @@ async function getParent(req, req, next) {
        return res.status(404).json({message: 'Cannot find Parent'})
      }
   } catch (err) {
-    return res.status(500).json({message: err.message})
+    return res.status(500).json({ message: err.message })
   }
   res.parent = parent
   next()
