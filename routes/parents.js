@@ -9,7 +9,7 @@ try {
      const parents = await Parent.find()
      res.json(parents)
 } catch (err) {
-  res.status(500).json({message: err.message })
+  res.status(500).json({ message: err.message })
 }
 })
 
@@ -20,9 +20,9 @@ try {
 
 //Creating One
 router.post('/', async (req, res) => {
-    const parent = newParent({
+    const parent = new Parent({
       name: req.body.name,
-      nameOfChild: req.body.nameOfChild 
+      childName: req.body.childName 
     })
     try{
       const newParent = await parent.save() 

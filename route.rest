@@ -6,4 +6,11 @@ GET http://localhost:3000/parents/10
 
 ###
 
+POST http://localhost:3000/parents
+ Content-type: application/json
+
+{
+    "name": "James Justis",
+    "childName": "Neville"
+}
 
