@@ -40,7 +40,11 @@ router.patch('/:id', getParent, async (req, res) => {
 
 //Deleting one
 router.delete('/:id', getParent, async (req, res) => {
- 
+ try{
+     await res.parent.remove()
+ }catch (err) { 
+   res.status(500).json({message: err.message})
+ }
 })
 
 async function getParent(req, res, next) {
