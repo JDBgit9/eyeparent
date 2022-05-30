@@ -1,20 +1,27 @@
 GET http://localhost:3000/parents
-627968370bf9679616dd2f4
+
 ###
 
 GET http://localhost:3000/parents/
-629168370bf9679616dd2j8
-
 
 
 
 ###
 
 POST http://localhost:3000/parents
- Content-type: application/json
+Content-type: application/json
 
 {
     "name": "James Justis",
     "childName": "Neville"
 }
+
+###
+
+DELETE http://localhost:3000/parents
+
+### 
+PATCH http://localhost:3000/parents
+
+
 
